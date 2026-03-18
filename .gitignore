@@ -1,0 +1,27 @@
+# Папки сборки
+Debug/
+Release/
+x64/
+x86/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.user
+*.suo
+*.sdf
+*.opensdf
+*.vcxproj.user
+*.vs/
+*.vscode/
+build/
+bin/
+obj/
+
+# Временные файлы
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.log
+*.tlog
+*.lastbuildstate
