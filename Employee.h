@@ -4,11 +4,11 @@
 using namespace std;
 class Employee
 { protected:
-    int id;                 // табельный номер
+    int id;                 // id
     string name;            // ФИО
-    double worktime;        // отработанные часы
-    double payment;         // вся зарплата
-    double rate;            //ставка за час
+    int worktime;           // отработанные часы
+    int payment;            // вся зарплата
+    int rate;             //ставка за час
 
 public:
     // Конструктор
@@ -21,24 +21,37 @@ public:
 
     }
 
-    // Виртуальный деструктор (чтоб всё правильно удалялось)
+    // Виртуальный деструктор (чтоб всe правильно удалялось)
     virtual ~Employee() {}
 
+    // Геттеры
+    int getId() 
+    {
+        return id; 
+    }
+    string getName()
+    {
+        return name;
+    }
+    int getPayment() 
+    { 
+        return payment; 
+    }
+    int getWorkTime()  
+    {
+        return worktime; 
+    }
+
     // Сеттер для времени
-    void setWorkTime(double time)
+    void setWorkTime(int time)
     {
         worktime = time;
     }
 
-    // Геттеры
-    int getId() { return id; }
-    string getName() { return name; }
-    double getPayment() { return payment; }
-    double getWorkTime() { return worktime; }
-
     // Виртуальные методы (будут переопределяться в наследниках)
     virtual void calc() = 0;  // чистый виртуальный - значит Employee абстрактный
-    virtual void printInfo() {
+    virtual void printInfo() 
+    {
         cout << "ID: " << id << ", Имя: " << name
             << ", Часы: " << worktime << ", Зарплата: " << payment << endl;
     }

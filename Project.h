@@ -7,15 +7,15 @@ class Project
 private:
 
     string name;
-    double budget;
+    int budget;
 
 public:
 
-    Project(const string& name, double budget);
+    Project(const string& name, int budget);
 
     string getName() const;
 
-    double getBudget() const;
+    int getBudget() const;
 
-    void setBudget(double newBudget);
+    void setBudget(int newBudget);
 };
