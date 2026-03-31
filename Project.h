@@ -1,21 +1,21 @@
 #pragma once
+#include <iostream>
 #include <string>
 using namespace std;
 
+
 class Project
 {
+
 private:
 
     string name;
-    int budget;
+    double budget;
 
 public:
 
-    Project(const string& name, int budget);
-
+    Project(const string& name, double budget);
     string getName() const;
-
-    int getBudget() const;
-
-    void setBudget(int newBudget);
+    double getBudget() const;
+    void setBudget(double newBudget);
 };
