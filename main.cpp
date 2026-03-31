@@ -13,14 +13,23 @@
 using namespace std;
 
 void printAllStaff(const vector<Employee*>& staff);
+
 void printStaffByProject(const vector<Employee*>& staff, const string& projectName);
+
 void searchByPosition(const vector<Employee*>& staff, const string& position);
+
 void searchByName(const vector<Employee*>& staff, const string& namePart);
+
 void searchByPayment(const vector<Employee*>& staff, double amount, bool greater);
+
 void createProject(vector<Project*>& projects);
+
 void addEmployeeToProject(vector<Employee*>& staff, vector<Project*>& projects);
+
 void moveEmployeeToAnotherProject(vector<Employee*>& staff, vector<Project*>& projects);
+
 void saveToFile(const vector<Employee*>& staff, const string& filename);
+
 
 int main()
 {
@@ -74,18 +83,17 @@ int main()
 
     do
     {
-        cout << endl << "\tМеню:" << endl;
-        cout << "1. Вывести всех сотрудников" << endl;
-        cout << "2. Вывести сотрудников на проекте" << endl;
-        cout << "3. Поиск по должности" << endl;
-        cout << "4. Поиск по имени" << endl;
-        cout << "5. Поиск по зарплате (больше/меньше суммы)" << endl;
-        cout << "6. Создать новый проект" << endl;
-        cout << "7. Добавить сотрудника на проект" << endl;
-        cout << "8. Перевести сотрудника на другой проект" << endl;
-        cout << "9. Сохранить в файл" << endl;
-        cout << "0. Выход" << endl;
-        cout << "Ваш выбор: ";
+        cout << endl << "\tМеню:" << endl
+         << "1. Вывести всех сотрудников" << endl
+         << "2. Вывести сотрудников на проекте" << endl
+         << "3. Поиск по должности" << endl
+         << "4. Поиск по имени" << endl
+         << "5. Поиск по зарплате (больше/меньше суммы)" << endl
+         << "6. Создать новый проект" << endl
+         << "7. Добавить сотрудника на проект" << endl
+         << "8. Перевести сотрудника на другой проект" << endl
+         << "9. Сохранить в файл" << endl
+         << "0. Выход" << endl;
         cin >> choice;
 
         switch (choice)
@@ -183,7 +191,7 @@ void printStaffByProject(const vector<Employee*>& staff, const string& projectNa
     }
     if (!found)
     {
-        cout << "Нет сотрудников на этом проекте." << endl;
+        cout << "Нет сотрудников на этом проекте" << endl;
     }
 }
 
@@ -201,7 +209,7 @@ void searchByPosition(const vector<Employee*>& staff, const string& position)
     }
     if (!found)
     {
-        cout << "Нет сотрудников с такой должностью." << endl;
+        cout << "Таких сотрудников не существет" << endl;
     }
 }
 
@@ -219,7 +227,7 @@ void searchByName(const vector<Employee*>& staff, const string& namePart)
     }
     if (!found)
     {
-        cout << "Ничего не найдено." << endl;
+        cout << "Ничего не найдено" << endl;
     }
 }
 
@@ -237,7 +245,7 @@ void searchByPayment(const vector<Employee*>& staff, double amount, bool greater
     }
     if (!found)
     {
-        cout << "Нет таких сотрудников." << endl;
+        cout << "Нет таких сотрудников" << endl;
     }
 }
 
@@ -270,7 +278,7 @@ void addEmployeeToProject(vector<Employee*>& staff, vector<Project*>& projects)
     }
     if (!emp)
     {
-        cout << "Сотрудник не найден." << endl;
+        cout << "Такого сотрудника не существет" << endl;
         return;
     }
 
@@ -295,7 +303,7 @@ void addEmployeeToProject(vector<Employee*>& staff, vector<Project*>& projects)
     }
     if (!proj)
     {
-        cout << "Проект не найден. Хотите создать его? (y/n): ";
+        cout << "Данного проекта не существует. Хотите создать его? (y/n): ";
         char ans;
         cin >> ans;
         if (ans == 'y' || ans == 'Y')
@@ -313,7 +321,7 @@ void addEmployeeToProject(vector<Employee*>& staff, vector<Project*>& projects)
     }
 
     emp->setProject(proj);
-    cout << "Сотрудник добавлен на проект." << endl;
+    cout << "Сотрудник добавлен на проект" << endl;
 }
 
 void moveEmployeeToAnotherProject(vector<Employee*>& staff, vector<Project*>& projects)
@@ -333,7 +341,7 @@ void moveEmployeeToAnotherProject(vector<Employee*>& staff, vector<Project*>& pr
     }
     if (!emp)
     {
-        cout << "Сотрудник не найден." << endl;
+        cout << "Такого сотрудника не существет" << endl;
         return;
     }
 
@@ -376,7 +384,7 @@ void moveEmployeeToAnotherProject(vector<Employee*>& staff, vector<Project*>& pr
     }
 
     emp->setProject(proj);
-    cout << "Сотрудник переведён." << endl;
+    cout << "Сотрудник переведён" << endl;
 }
 
 void saveToFile(const vector<Employee*>& staff, const string& filename)
@@ -384,7 +392,7 @@ void saveToFile(const vector<Employee*>& staff, const string& filename)
     fstream file(filename);
     if (!file.is_open())
     {
-        cerr << "Не удалось открыть файл для записи." << endl;
+        cerr << "Не удалось открыть файл для записи" << endl;
         return;
     }
 
