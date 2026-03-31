@@ -6,6 +6,8 @@
 
 class StaffFactory 
 {
+
 public:
+
     static vector<Employee*> makeStaff(const string& filename, vector<Project*>& projects);
 };
