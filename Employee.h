@@ -9,13 +9,16 @@ using namespace std;
 class Employee
 {
 protected:
+
     int id;
     string name;
     double worktime;
     double payment;
     double rate;
     Project* project;
+
 public:
+
     Employee(int id, const string& name, double rate, Project* proj = nullptr);
     virtual ~Employee() {}
 

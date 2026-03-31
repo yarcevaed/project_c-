@@ -5,9 +5,7 @@ using namespace std;
 
 Employee::Employee(int id, const string& name, double rate, Project* proj)
     : id(id), name(name), rate(rate), worktime(0), payment(0), project(proj)
-{
-
-}
+{}
 
 void Employee::setWorkTime(double hours)
 {
