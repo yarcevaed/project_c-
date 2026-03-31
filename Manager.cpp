@@ -5,9 +5,7 @@ using namespace std;
 
 ProjectManager::ProjectManager(int id, const string& name, double rate, Project* proj)
     : Employee(id, name, rate, proj), subordinates(0)
-{
-
-}
+{}
 
 void ProjectManager::setSubordinates(int count)
 {
