@@ -1,59 +1,35 @@
 #pragma once
+#include <string>
 #include <iostream>
 #include <string>
+#include <vector>
+#include "Project.h"
 using namespace std;
+
 class Employee
-{ protected:
-    int id;                 // id
-    string name;            // ФИО
-    int worktime;           // отработанные часы
-    int payment;            // вся зарплата
-    int rate;             //ставка за час
-
+{
+protected:
+    int id;
+    string name;
+    double worktime;
+    double payment;
+    double rate;
+    Project* project;
 public:
-    // Конструктор
-    Employee(int _id, string _name) 
-    {
-        id = _id;
-        name = _name;
-        worktime = 0;
-        payment = 0;
-
-    }
-
-    // Виртуальный деструктор (чтоб всe правильно удалялось)
+    Employee(int id, const string& name, double rate, Project* proj = nullptr);
     virtual ~Employee() {}
 
-    // Геттеры
-    int getId() 
-    {
-        return id; 
-    }
-    string getName()
-    {
-        return name;
-    }
-    int getPayment() 
-    { 
-        return payment; 
-    }
-    int getWorkTime()  
-    {
-        return worktime; 
-    }
+    virtual void calc() = 0;
+    virtual void printInfo() const;
 
-    // Сеттер для времени
-    void setWorkTime(int time)
-    {
-        worktime = time;
-    }
+    void setWorkTime(double hours);
+    void setProject(Project* proj);
 
-    // Виртуальные методы (будут переопределяться в наследниках)
-    virtual void calc() = 0;  // чистый виртуальный - значит Employee абстрактный
-    virtual void printInfo() 
-    {
-        cout << "ID: " << id << ", Имя: " << name
-            << ", Часы: " << worktime << ", Зарплата: " << payment << endl;
-    }
+    int getId() const;
+    string getName() const;
+    double getPayment() const;
+    virtual string getPosition() const = 0;
+    Project* getProject() const;
+
+    virtual string toFileString() const;
 };
-
